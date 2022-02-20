@@ -1,0 +1,15 @@
+---
+ - hosts: web3
+   ignore_errors: yes
+   become: yes
+   tasks:
+    - name: Create user
+      user:
+        name: Belo
+        comment: Temfack Tsague
+    - name: create directory
+      file:
+        path: /tmp/dir12
+        owner: Belo
+        state: directory
+        mode: "0777"
